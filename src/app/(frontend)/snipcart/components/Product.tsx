@@ -12,6 +12,12 @@ const Product = ({
     description: string
   }
 }) => {
+  const BASE_URL =
+    process.env.NODE_ENV === 'production'
+      ? 'https://snipcart-production.up.railway.app'
+      : 'https://e409-136-185-81-205.ngrok-free.app'
+
+  const productUrl = `${BASE_URL}/snipcart/product/${product.id}`
   return (
     <article className="bg-white border border-gray-200 rounded-lg shadow-md p-4 flex flex-col items-center text-center hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700 dark:text-white">
       <Link href={`/snipcart/product/${product.id}`}>
@@ -33,7 +39,7 @@ const Product = ({
         data-item-id={product.id}
         data-item-name={product.name}
         data-item-price={product.price}
-        data-item-url={`/product/${product.id}`}
+        data-item-url={productUrl}
         data-item-image={product.image}
       >
         Add to cart
