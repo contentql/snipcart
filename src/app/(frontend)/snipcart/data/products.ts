@@ -1,4 +1,4 @@
-export const ProductList = [
+export const productList = [
   {
     id: 'halfmoon',
     name: 'Halfmoon Betta',

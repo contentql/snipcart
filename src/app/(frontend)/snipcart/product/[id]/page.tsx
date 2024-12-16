@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ProductList } from '../../data/products'
+import { productList } from '../../data/products'
 
 interface Props {
   params: Promise<{
@@ -10,7 +10,7 @@ interface Props {
 const ProductSingle = async (props: Props) => {
   const syncParams = await props.params
   const productId = syncParams.id
-  const data = ProductList.find((post) => post.id === productId)
+  const data = productList.find((post) => post.id === productId)
 
   return (
     <div className="container mx-auto">
