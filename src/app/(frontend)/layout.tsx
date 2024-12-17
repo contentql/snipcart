@@ -47,6 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           id="snipcart"
           data-api-key={`${process.env.NEXT_PUBLIC_SNIPCART}`}
           data-config-modal-style="side"
+          data-config-add-product-behavior="none"
         />
       </body>
     </html>
